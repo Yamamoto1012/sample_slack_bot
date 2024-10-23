@@ -4,10 +4,6 @@ import { load } from 'ts-dotenv';
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-console.log('SLACK_BOT_TOKEN:', process.env.SLACK_BOT_TOKEN);
-console.log('SLACK_SIGNING_SECRET:', process.env.SLACK_SIGNING_SECRET);
-console.log('PORT:', process.env.PORT);
-
 // ② 環境変数の読み込みと検証
 const env = load({
   SLACK_BOT_TOKEN: {
