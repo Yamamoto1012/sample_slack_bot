@@ -39,7 +39,7 @@ const app = new App({
 // ④ SlackBotにメッセージを送信する
 app.message('', async ({ message, say }) => {
   if (!message.subtype) {
-    await say(`Hello, <@${message.user}>. You said: ${message.text}`);
+    await say(`${message.text}`);
   }
 });
 
