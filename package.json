@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@slack/bolt": "^4.0.1",
+    "@supabase/supabase-js": "^2.45.6",
     "ts-dotenv": "^0.9.1"
   }
 }
