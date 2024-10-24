@@ -1,5 +1,4 @@
 import { useSlackBot } from "./hooks/useSlackBot";
-import { useSupabase } from "./hooks/useSupabase";
 import { saveReactionData } from "./saveReactionData";
 
 // リアクションをsupabaseに追加する
@@ -19,8 +18,6 @@ import { saveReactionData } from "./saveReactionData";
   });
 
   //　アプリの起動
-  (async () => {
-    await slackBot.start(PORT || 3000);
-    console.log(`${PORT}ポートを立ち上げます`);
-  })
+  await slackBot.start(PORT || 3000);
+  console.log(`${PORT}ポートを立ち上げます`);
 })();
