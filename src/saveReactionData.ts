@@ -1,6 +1,6 @@
 import { useSupabase } from "./hooks/useSupabase";
 
-async function saveReactionData(userId: string, messageId: string, reactionId: string, emojiName: string, createdAt: string) {
+export async function saveReactionData(userId: string, messageId: string, reactionId: string, emojiName: string, createdAt: string) {
   const { supabase } = useSupabase();
 
   // userテーブルの更新
