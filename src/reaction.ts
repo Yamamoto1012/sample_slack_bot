@@ -1,8 +1,7 @@
-import { App } from "@slack/bolt";
-import { load } from "ts-dotenv";
 import { useSlackBot } from "./hooks/useSlackBot";
 
 // リアクションの数を計測
+
 // リアクションの数をカウントするためのMapを用意
 const reactionCounts = new Map<string, number>();
 (async () => {
@@ -11,7 +10,6 @@ const reactionCounts = new Map<string, number>();
   // リアクションが追加された時の処理
   slackBot.event("reaction_added", async ({ event, client }) => {
     const { reaction, user, item, event_ts } = event;
-    const ts = item.ts;
 
     // リアクションのカウントを更新
     const count = reactionCounts.get(reaction) || 0;
