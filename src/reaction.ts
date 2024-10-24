@@ -21,7 +21,7 @@ const env = load({
 
 // 環境変数が正しく設定されているかをチェック
 if (!env.SLACK_BOT_TOKEN || !env.SLACK_SIGNING_SECRET) {
-  console.error('Error: SLACK_BOT_TOKEN or SLACK_SIGNING_SECRET is missing.');
+  console.error('SLACK_BOT_TOKENが設定されていないか、SLACK_SINGIN_SECRETが設定されていません');
   process.exit(1); // 必須の環境変数がない場合はプロセスを終了
 }
 
@@ -65,6 +65,6 @@ app.event('reaction_added', async ({ event, client }) => {
 // アプリを起動
 (async () => {
   await app.start(env.PORT);
-  console.log(`Slack bot is running on port ${env.PORT}`);
+  console.log(`${env.PORT}ポートを立ち上げます`);
 })();
 
