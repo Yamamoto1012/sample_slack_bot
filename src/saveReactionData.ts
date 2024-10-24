@@ -27,8 +27,9 @@ export async function saveReactionData(userId: string, messageId: string, reacti
   let { data: reaction, error: reactionError } = await supabase
   .from('reaction')
   .upsert(
-    { id: reactionId, emoji_name: emojiName, created_at: userId },
-    { onConflict: 'id' })
+    { id: reactionId, emoji_name: emojiName, created_at: createdAt },
+    { onConflict: 'id' }
+  )
 
   if (reactionError) {
     console.error(reactionError);
