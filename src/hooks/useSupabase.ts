@@ -1,5 +1,5 @@
 import { createClient } from "@supabase/supabase-js"
-import { Database } from "../../supabaseTypes"
+import { Database } from "../supabaseTypes"
 import { load } from "ts-dotenv";
 
 const path = require('path');
@@ -12,9 +12,9 @@ const env = load({
   },
   SUPABASE_ANON_KEY: {
     type: String,
-    default: process.env.SUPABASE_ANON_KEY || ''
-  }
-})
+    default: process.env.SUPABASE_ANON_KEY || '',
+  },
+});
 
 export const useSupabase = () => {
   if (!env.SUPABASE_URL || !env.SUPABASE_ANON_KEY) {
